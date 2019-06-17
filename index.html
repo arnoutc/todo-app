@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en" data-framework="backbonejs">
 	<head>
@@ -26,7 +27,8 @@
 		<script type="text/template" id="item-template">
 			<div class="view">
 				<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
-				<label><%- title %></label>
+				<label><%- title %><%= completed ? ' -- done!' : '' %></label>
+				<button class="edit-btn"></button>
 				<button class="destroy"></button>
 			</div>
 			<input class="edit" value="<%- title %>">
