@@ -24,11 +24,18 @@
 			<p>Written by <a href="https://github.com/addyosmani">Addy Osmani</a></p>
 			<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
 		</footer>
+		<script type="text/template" id="new-item-template">
+			<div class="view">
+				<button class="priority-btn"></button>
+				<button class="edit-btn"></button>
+				<button class="destroy"></button>
+			</div>
+		</script>
 		<script type="text/template" id="item-template">
 			<div class="view">
 				<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
-				<button class="priority-btn"></button>
 				<label><%- title %><%= completed ? ' -- done!' : '' %></label>
+				<button class="priority-btn"></button>
 				<button class="edit-btn"></button>
 				<button class="destroy"></button>
 			</div>
@@ -58,6 +65,7 @@
 		<script src="bower_components/backbone.localStorage/backbone.localStorage.js"></script>
 		<script src="js/models/todo.js"></script>
 		<script src="js/collections/todos.js"></script>
+		<script src="js/views/new-todo-view.js"></script>
 		<script src="js/views/todo-view.js"></script>
 		<script src="js/views/app-view.js"></script>
 		<script src="js/routers/router.js"></script>
