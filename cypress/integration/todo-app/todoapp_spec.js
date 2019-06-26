@@ -8,9 +8,12 @@ describe('my first test', function(){
     let el = cy.get('#new-todo');
 
     el.should('have.text','');
-
     el.should('have.attr','placeholder','What needs to be done?');
 
+    let prio = cy.get('header button.priority-btn');
+    prio.trigger('mouseover').should('be.visible');
+
+    prio.trigger('click');
     el.should('have.class', 'priority');
 
   });

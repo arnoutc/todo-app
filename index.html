@@ -11,6 +11,7 @@
 			<header id="header">
 				<h1>todos</h1>
 				<input id="new-todo" placeholder="What needs to be done?" autofocus>
+				<button class="priority-btn"></button>
 			</header>
 			<section id="main">
 				<input id="toggle-all" type="checkbox">
@@ -25,11 +26,9 @@
 			<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
 		</footer>
 		<script type="text/template" id="new-item-template">
-			<div class="view">
+				<h1>todos2</h1>
+				<input id="new-todo" placeholder="What needs to be done?" value="<%- title %>" autofocus>
 				<button class="priority-btn"></button>
-				<button class="edit-btn"></button>
-				<button class="destroy"></button>
-			</div>
 		</script>
 		<script type="text/template" id="item-template">
 			<div class="view">
@@ -65,7 +64,6 @@
 		<script src="bower_components/backbone.localStorage/backbone.localStorage.js"></script>
 		<script src="js/models/todo.js"></script>
 		<script src="js/collections/todos.js"></script>
-		<script src="js/views/new-todo-view.js"></script>
 		<script src="js/views/todo-view.js"></script>
 		<script src="js/views/app-view.js"></script>
 		<script src="js/routers/router.js"></script>

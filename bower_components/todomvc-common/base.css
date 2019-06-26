@@ -110,29 +110,47 @@
 		border-top-right-radius: 1px;
 	}
 
-	#header button {
+	/* start header input priority button */
+	header:hover .priority-btn {
 		display: block;
-		height: auto;
-		position: absolute;
-		top: 0;
-		bottom: 0;
-		left: 15px;
-		padding: 0 4px;
-		background-color: #fcfcfc;
-		/*color: #d00;*/
-		/* Mobile Safari */
-		font-size: 24px;
-		/*padding-bottom: 40px;*/
-		border: none;
-		-webkit-appearance: none;
-		-ms-appearance: none;
-		-o-appearance: none;
-		appearance: none;
 	}
 
-	#header button:after {
-		content: '!';
+	header input.priority:not(.completed) label {
+		color: #d66;
 	}
+
+	header input.priority .priority-btn:after {
+		color: #d66;
+	}
+
+	header .priority-btn {
+		display: none;
+		position: absolute;
+		top: 0;
+		right: 70px;
+		bottom: 0;
+		width: 40px;
+		height: 40px;
+		margin: auto 0;
+		font-size: 22px;
+		color: #a88a8a;
+		-webkit-transition: all 0.2s;
+		transition: all 0.2s;
+		z-index: 10;
+	}
+
+	header .priority-btn:hover {
+		text-shadow: 0 0 1px #000,
+					0 0 10px rgba(199, 107, 107, 0.8);
+		-webkit-transform: scale(1.3);
+		transform: scale(1.3);
+	}
+
+	header .priority-btn:after {
+		content: '!';
+	} 
+
+	/* end header input priority button */
 
 	#new-todo,
 	.edit {
