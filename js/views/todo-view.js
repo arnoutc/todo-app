@@ -24,7 +24,7 @@ var app = app || {};
 			'click .edit-btn' : 'edit',
 			'click .destroy': 'clear',
 			'keypress .edit': 'updateOnEnter',
-			'keydown .edit': 'revertOnEscape',
+			'keydown .edit': 'revemodelrtOnEscape',
 			'blur .edit': 'close'
 		},
 

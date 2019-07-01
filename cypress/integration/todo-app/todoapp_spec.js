@@ -5,16 +5,20 @@ describe('my first test', function(){
 
     cy.visit('http://localhost:8000');
 
+    //set text
     let el = cy.get('#new-todo');
 
-    el.should('have.text','');
     el.should('have.attr','placeholder','What needs to be done?');
 
-    let prio = cy.get('header button.priority-btn');
-    prio.trigger('mouseover').should('be.visible');
+    el.type('supercalifragilisticexpialidocious');
+    el.should('have.value','supercalifragilisticexpialidocious');
 
+    // click on the priority button in the input box
+    let prio = cy.get('header button.priority-btn');
     prio.trigger('click');
-    el.should('have.class', 'priority');
+
+    //then
+    cy.get('#todo-list li').should('have.class', 'priority');
 
   });
 });

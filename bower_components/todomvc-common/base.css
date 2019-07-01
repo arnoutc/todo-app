@@ -90,6 +90,7 @@
 	#header {
 		padding-top: 15px;
 		border-radius: inherit;
+		position: relative;
 	}
 
 	#header:before {
@@ -111,9 +112,9 @@
 	}
 
 	/* start header input priority button */
-	header:hover .priority-btn {
+	/* header:hover .priority-btn {
 		display: block;
-	}
+	} */
 
 	header input.priority:not(.completed) label {
 		color: #d66;
@@ -124,9 +125,9 @@
 	}
 
 	header .priority-btn {
-		display: none;
+		display: block;
 		position: absolute;
-		top: 0;
+		top: 20px;
 		right: 70px;
 		bottom: 0;
 		width: 40px;

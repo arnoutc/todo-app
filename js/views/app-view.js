@@ -19,6 +19,7 @@ var app = app || {};
 
 		// Delegated events for creating new items, and clearing completed ones.
 		events: {
+			'click #header .priority-btn': 'togglePriority',
 			'keypress #new-todo': 'createOnEnter',
 			'click #clear-completed': 'clearCompleted',
 			'click #toggle-all': 'toggleAllComplete'
@@ -99,6 +100,16 @@ var app = app || {};
 			return {
 				title: this.$input.val().trim(),
 				order: app.todos.nextOrder(),
+				priority: false,
+				completed: false
+			};
+		},
+
+		newPrioritizedAttributes: function(){
+			return {
+				title: this.$input.val().trim(),
+				order: app.todos.nextOrder(),
+				priority: true,
 				completed: false
 			};
 		},
@@ -126,6 +137,11 @@ var app = app || {};
 					completed: completed
 				});
 			});
+		},
+
+		togglePriority: function(){
+			//change button color to red
+			app.todos.create(this.newPrioritizedAttributes());
 		}
 	});
 })(jQuery);
